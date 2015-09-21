@@ -8,6 +8,8 @@ If the browser doesn't support transitions, force.js fallback to native javascri
 
 Force.js support even older browser version with no transition support.
 
+**See the [Demo](http://gravmatt.com/force-js)!**
+
 To use it on your page, just write this line of code in the HTML `HEAD` or on the bottom of the `BODY` tag.
 
 ```
