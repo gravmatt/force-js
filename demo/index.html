@@ -1,0 +1,353 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="bower_components/github-markdown-css/github-markdown.css">
+		<title>Force.js</title>
+	</head>
+	<body>
+		<a href="https://github.com/gravmatt"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <div id="header">
+      <div id="banner">
+				<div class="title">
+					Force.js
+				</div>
+				<div class="description">
+					The easy way to scroll and animate your page.
+				</div>
+				<div class="extras">
+					<div class="links"><a href="http://renetanczos.com" target="_blank">By René Tanczos</a> &bull; <a href="https://github.com">Source & Documentation</a></div>
+					<div class="twitter"><a href="https://twitter.com/gravmatt" class="twitter-follow-button" data-show-count="true" data-show-screen-name="false">Follow</a></div>
+				</div>
+			</div>
+    </div>
+		<div id="menu-container">
+			<div id="menu">
+				<ul>
+					<li class="spy-link">
+						<a href="#overview">Overview</a>
+					</li>
+					<li class="spy-link">
+						<a href="#jump">Jump</a>
+					</li>
+					<li class="spy-link">
+						<a href="#move">Move</a>
+					</li>
+					<li class="spy-link">
+						<a href="#options">Options</a>
+					</li>
+					<li class="spy-link">
+						<a href="#licence">Licence</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<article id="overview">
+			<h1 class="title">Force.js</h1>
+			<div class="markdown-body">
+<p>Finally, an easy way to animate elements and jump around on your page.</p>
+<p>It has different easing functions (listed below) and tries (by default) to use CSS-Transitions to animate elements.</p>
+<p>If the browser doesn&#39;t support transitions, force.js fallback to native javascript functions.</p>
+<p>Force.js support even older browser version with no transition support.</p>
+<p>To use it on your page, just write this line of code in the HTML <code>HEAD</code> or on the bottom of the <code>BODY</code> tag.</p>
+<pre><code>&lt;script src=&quot;force.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+</code></pre><p>But for those of you who use an module system, it also supports <strong>exports</strong> and <strong>AMD</strong>.</p>
+<h3 >jQuery</h3>
+<p>Force.js is 100% pure vanilla!!!</p>
+<p>But for all the coders who don&#39;t want to miss jQuery.</p>
+<p>Force.js automatically detects jQuery and extend its Objects with the <strong>force.move()</strong> and <strong>force.jump()</strong> function.</p>
+<p>So you are able to use force.js in an jQuery object.</p>
+<pre><code>$(&#39;#ball&#39;).move({left: 100px, top: 50px}, 1000);
+</code></pre><p><em>To use force.js in jQuery, write the jQuery TAG first. So force.js can extend its objects afterwards.</em></p>
+			</div>
+		</article>
+		<article id="jump">
+			<h1 class="title">force.jump()</h1>
+			<div class="markdown-body">
+<p>Doing jumps on the page are easier than every.</p>
+<p>By the way, this page runs with the <strong>force.jump()</strong> function.</p>
+<p>You can play around with the different easing functions, duration and jump cache mode.</p>
+<div class="option-panel">
+	Easing Functions:
+	<select onchange="jumpEasingChange(this)">
+		<option selected="true" value="swing">swing</option>
+		<option value="easeInQuad">easeInQuad</option>
+		<option value="easeOutQuad">easeOutQuad</option>
+		<option value="easeInOutQuad">easeInOutQuad</option>
+		<option value="easeInCubic">easeInCubic</option>
+		<option value="easeOutCubic">easeOutCubic</option>
+		<option value="easeInOutCubic">easeInOutCubic</option>
+		<option value="easeInQuart">easeInQuart</option>
+		<option value="easeOutQuart">easeOutQuart</option>
+		<option value="easeInOutQuart">easeInOutQuart</option>
+		<option value="easeInQuint">easeInQuint</option>
+		<option value="easeOutQuint">easeOutQuint</option>
+		<option value="easeInOutQuint">easeInOutQuint</option>
+		<option value="easeInSine">easeInSine</option>
+		<option value="easeOutSine">easeOutSine</option>
+		<option value="easeInOutSine">easeInOutSine</option>
+		<option value="easeInExpo">easeInExpo</option>
+		<option value="easeOutExpo">easeOutExpo</option>
+		<option value="easeInOutExpo">easeInOutExpo</option>
+		<option value="easeInCirc">easeInCirc</option>
+		<option value="easeOutCirc">easeOutCirc</option>
+		<option value="easeInOutCirc">easeInOutCirc</option>
+		<option value="easeInElastic">easeInElastic</option>
+		<option value="easeOutElastic">easeOutElastic</option>
+		<option value="easeInOutElastic">easeInOutElastic</option>
+		<option value="easeInBack">easeInBack</option>
+		<option value="easeOutBack">easeOutBack</option>
+		<option value="easeInOutBack">easeInOutBack</option>
+		<option value="easeInBounce">easeInBounce</option>
+		<option value="easeOutBounce">easeOutBounce</option>
+		<option value="easeInOutBounce">easeInOutBounce</option>
+	</select>
+	Duration:
+	<select onchange="jumpDurationChange(this)">
+		<option value="500">500</option>
+		<option selected="true" value="1000">1000</option>
+		<option value="2000">2000</option>
+		<option value="3000">3000</option>
+	</select>
+	Enable Jump Cache: <input type="checkbox" checked="true" onchange="jumpCacheChange(this)">
+	<script>
+		function jumpEasingChange(el) {
+			force.opt.scrollEasing = el.value;
+			console.log('Scroll Easing: ' + el.value);
+		}
+		function jumpDurationChange(el) {
+			force.opt.jumpDuration = el.value;
+			console.log('Jump Duration: ' + el.value);
+		}
+		function jumpCacheChange(el) {
+			force.opt.cacheJumps = el.checked;
+			console.log('Cache Jumps: ' + el.checked);
+		}
+	</script>
+</div>
+<p>To automatically detect hash links on your page, just use the <strong>force.bindHashes()</strong> function like this.</p>
+<pre><code>force.bindHashes();
+</code></pre><p>But if you want to do it by yourself, use the <strong>force.jump()</strong> function.</p>
+<pre><code>var element = document.getElementBy(&#39;element-id&#39;);
+
+// jump by object
+force.jump(element);
+
+// jump by selector
+force.jump(&#39;#element-id&#39;);
+</code></pre><p>You can use the function with additional options.</p>
+<pre><code>force.jump(target);
+
+var options = {
+  setHash: false
+  // if set to TRUE, it sets the hash/id value of the element in the URL
+
+  duration: 500,
+  done: function() {},
+  easing: &#39;easeInQuad&#39;,
+};
+force.jump(target, options);
+</code></pre><p>Or the jQuery extention.</p>
+<pre><code>$(&#39;#ball&#39;).jump();
+
+//$(&#39;#ball&#39;).jump(options);
+</code></pre>
+			</div>
+		</article>
+		<article id="move">
+			<h1 class="title">force.move()</h1>
+			<div class="markdown-body">
+<p>You can also animate elements with force.js.</p>
+
+<h4>Example</h4>
+<div id="move-example" class="option-panel">
+	<div>Hit the ball!</div>
+	<div id="ball-cage">
+		<div id="ball" onclick="ballHit(this)"></div>
+	</div>
+	<div class="options">
+		Easing Functions:
+		<select onchange="moveEasingChange(this)">
+			<option selected="true" value="swing">swing</option>
+			<option value="easeInQuad">easeInQuad</option>
+			<option value="easeOutQuad">easeOutQuad</option>
+			<option value="easeInOutQuad">easeInOutQuad</option>
+			<option value="easeInCubic">easeInCubic</option>
+			<option value="easeOutCubic">easeOutCubic</option>
+			<option value="easeInOutCubic">easeInOutCubic</option>
+			<option value="easeInQuart">easeInQuart</option>
+			<option value="easeOutQuart">easeOutQuart</option>
+			<option value="easeInOutQuart">easeInOutQuart</option>
+			<option value="easeInQuint">easeInQuint</option>
+			<option value="easeOutQuint">easeOutQuint</option>
+			<option value="easeInOutQuint">easeInOutQuint</option>
+			<option value="easeInSine">easeInSine</option>
+			<option value="easeOutSine">easeOutSine</option>
+			<option value="easeInOutSine">easeInOutSine</option>
+			<option value="easeInExpo">easeInExpo</option>
+			<option value="easeOutExpo">easeOutExpo</option>
+			<option value="easeInOutExpo">easeInOutExpo</option>
+			<option value="easeInCirc">easeInCirc</option>
+			<option value="easeOutCirc">easeOutCirc</option>
+			<option value="easeInOutCirc">easeInOutCirc</option>
+			<option value="easeInElastic">easeInElastic</option>
+			<option value="easeOutElastic">easeOutElastic</option>
+			<option value="easeInOutElastic">easeInOutElastic</option>
+			<option value="easeInBack">easeInBack</option>
+			<option value="easeOutBack">easeOutBack</option>
+			<option value="easeInOutBack">easeInOutBack</option>
+			<option value="easeInBounce">easeInBounce</option>
+			<option value="easeOutBounce">easeOutBounce</option>
+			<option value="easeInOutBounce">easeInOutBounce</option>
+		</select>
+		<br>
+		Duration:
+		<select onchange="moveDurationChange(this)">
+			<option value="500">500</option>
+			<option selected="true" value="1000">1000</option>
+			<option value="2000">2000</option>
+			<option value="3000">3000</option>
+		</select>
+		<br>
+		CSS Transitions: <input type="checkbox" checked="true" onchange="cssTransitionsChange(this)">
+		<script>
+			var moveToggle = true;
+			var moveOptions = {
+				easing: 'swing',
+				duration: 1000
+			};
+			function moveEasingChange(el) {
+				force.opt.moveEasing = moveOptions.easing = el.value;
+				console.log('Move Easing: ' + el.value);
+			}
+			function moveDurationChange(el) {
+				force.opt.moveDuration = moveOptions.duration = el.value;
+				console.log('Move Duration: ' + el.value);
+			}
+			function cssTransitionsChange(el) {
+				force.opt.cssTransitions = el.checked;
+				console.log('CSS Transitions: ' + el.checked);
+			}
+			function ballHit(el) {
+				console.log('Ball was hit!');
+				moveOptions.properties = {left: (moveToggle ? '340px' : '0px')};
+				force.move(el, moveOptions);
+				moveOptions.properties = {top: (moveToggle ? '160px' : '0px')};
+				force.move(el, moveOptions);
+				moveToggle = !moveToggle;
+			}
+		</script>
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<p>To do so, just use the <strong>force.move()</strong> function.</p>
+<pre><code>var element = document.getElementBy(&#39;element-id&#39;);
+
+// jump by object
+force.move(element, {left: 100px, top: 50px}, 1000);
+
+// jump by selector
+force.move(&#39;#element-id&#39;, {left: 100px, top: 50px}, 1000);
+</code></pre><p>You can use the function with additional options.</p>
+<pre><code>force.move(target, properties, duration, doneCallback);
+
+var options = {
+  properties: {
+    left: &#39;100px&#39;
+  },
+  duration: 500,
+  done: function() {},
+  easing: &#39;easeInQuad&#39;
+};
+force.move(target, options);
+</code></pre><p>Or the jQuery extention.</p>
+<pre><code>$(&#39;#ball&#39;).move({left: 100px, top: 50px}, 1000);
+
+// $(&#39;#ball&#39;).move(options, duration, doneCallback);
+</code></pre><p>Don&#39;t worry if you use the function multiple times.</p>
+<p>The <strong>force.move()</strong> function is cached!</p>
+<p>That means, the function just get executed if the previous call is done.</p>
+			</div>
+		</article>
+		<article id="options">
+			<h1 class="title">Options</h1>
+			<div class="markdown-body">
+<p>In force.js you are able to modify everything you want to fit your needs.</p>
+<pre><code>// edit single option
+force.opt.cacheScrolling = true;
+
+// or use the config function and paste an object to override the old settings.
+force.config( { cacheScrolling: true } );
+</code></pre><h4 >hashLinkPattern: &#39;a[href*=&quot;#&quot;]:not([href=&quot;#&quot;])&#39;</h4>
+<p>This is a selector to find the hash links in your page by exectuting the <strong>force.bindHashes()</strong> function.</p>
+<h4 id="frames-60">frames: 60</h4>
+<p>By default, force.js runs at 60 fps.</p>
+<p>You can edit this property as well.</p>
+<p>But be careful!</p>
+<p>You can increase but also decrease the performance of the page.</p>
+<h4 id="moveduration-1000-jumpduration-1000">moveDuration: 1000 &amp;&amp; jumpDuration: 1000</h4>
+<p>The default move and jump duration for the <strong>force.move()</strong> and <strong>force.jump()</strong> function is <strong>1000</strong> ms.
+You can override this value inside the functions by set the duration property in the config object if you want to.</p>
+<h4 >moveEasing: &#39;swing&#39; AND jumpEasing: &#39;swing&#39;</h4>
+<p>The default easing function is <strong>swing</strong> but you can change this to:</p>
+<ul>
+<li>swing</li>
+<li>easeInQuad</li>
+<li>easeOutQuad</li>
+<li>easeInOutQuad</li>
+<li>easeInCubic</li>
+<li>easeOutCubic</li>
+<li>easeInOutCubic</li>
+<li>easeInQuart</li>
+<li>easeOutQuart</li>
+<li>easeInOutQuart</li>
+<li>easeInQuint</li>
+<li>easeOutQuint</li>
+<li>easeInOutQuint</li>
+<li>easeInSine</li>
+<li>easeOutSine</li>
+<li>easeInOutSine</li>
+<li>easeInExpo</li>
+<li>easeOutExpo</li>
+<li>easeInOutExpo</li>
+<li>easeInCirc</li>
+<li>easeOutCirc</li>
+<li>easeInOutCirc</li>
+<li>easeInElastic*</li>
+<li>easeOutElastic*</li>
+<li>easeInOutElastic*</li>
+<li>easeInBack*</li>
+<li>easeOutBack*</li>
+<li>easeInOutBack*</li>
+<li>easeInBounce*</li>
+<li>easeOutBounce*</li>
+<li>easeInOutBounce*</li>
+</ul>
+<p>* This easing functions doesn&#39;t work with css transitions and use native javascript.
+But don&#39;t worry, force.js does it automatically for you!</p>
+<h4 >cacheJumps: true</h4>
+<p>Page jumps are cached by default.</p>
+<p>That means, the next jump only animates if the previous is finished.</p>
+<p>Set it to FALSE and the jump stops immediately and starts the new jump.</p>
+<h4 >cssTransitions: true</h4>
+<p>By default, force.js try to use css transitions if the browser supports it.</p>
+<p>Using transitions looks much smoother than native javascript and doesn&#39;t block the event loop.</p>
+<p>I would recommend it to let it turned ON by default.</p>
+<p>force.js manage the usage of transitions automatically if the browser doesn&#39;t support it.</p>
+			</div>
+		</article>
+		<article id="licence">
+			<h1 class="title">Licence</h1>
+			<div class="markdown-body">
+				<p><strong>Force.js is published under the MIT licence. So feel free to use, share or modify it!</strong></p>
+			</div>
+		</article>
+		<div id="back-to-top">
+			<a href="#menu">Back to Top</a>
+		</div>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <script src="force.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript"></script>
+  </body>
+</html>

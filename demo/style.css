@@ -1,0 +1,172 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans';
+  min-width: 850px;
+}
+#header #banner {
+  height: 600px;
+  text-align: center;
+}
+#header #banner .title {
+  font-size: 120px;
+  padding-top: 140px;
+  font-weight: bold;
+  color: #2b2b2b;
+}
+#header #banner .description {
+  padding-top: 20px;
+  font-size: 1.4em;
+}
+#header #banner .extras {
+  padding-top: 10px;
+}
+#header #banner .extras .links {
+  padding-top: 10px;
+}
+#header #banner .extras .twitter {
+  padding-top: 30px;
+}
+#menu-container {
+  height: 90px;
+}
+#menu {
+  background-color: #00465c;
+  height: 90px;
+  color: #fff;
+  width: 100%;
+  letter-spacing: 2px;
+  z-index: 1001;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+#menu.fixed {
+  position: fixed;
+  top: 0px;
+  height: 50px;
+}
+#menu.fixed li {
+  height: 50px;
+  font-size: 13px;
+}
+#menu.fixed a {
+  padding-top: 16.66666667px;
+}
+#menu ul {
+  text-decoration: none;
+  list-style-type: none;
+  text-align: center;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+}
+#menu ul li {
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  display: inline-block;
+  height: 90px;
+  width: 160px;
+  font-size: 18px;
+}
+#menu ul li.active {
+  background-color: #03546e;
+}
+#menu ul li:hover {
+  background-color: #03546e;
+  cursor: pointer;
+}
+#menu ul li a {
+  padding-top: 30px;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  font-weight: lighter;
+}
+article {
+  padding-top: 70px;
+}
+article .title {
+  text-align: center;
+}
+article#licence {
+  text-align: center;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+h1 {
+  font-size: 3em;
+}
+a {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+.markdown-body {
+  width: 790px;
+  padding: 30px;
+  margin: 0 auto;
+}
+#back-to-top {
+  text-align: center;
+  padding-top: 300px;
+  padding-bottom: 50px;
+}
+#back-to-top a:hover {
+  color: #00465c;
+}
+.option-panel {
+  margin-bottom: 15px;
+  font-size: .9em;
+  background-color: #f7f7f7;
+  padding: 16px;
+  border-radius: 3px;
+}
+.option-panel select {
+  margin-right: 20px;
+}
+.clearfix {
+  clear: both;
+}
+#move-example {
+  background-color: #f7f7f7;
+  height: 300px;
+}
+#move-example #ball-cage {
+  width: 60%;
+  float: left;
+  padding: 20px;
+}
+#move-example #ball-cage #ball {
+  top: 0px;
+  left: 0px;
+  position: relative;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  background-color: #00465c;
+  cursor: pointer;
+  box-shadow: 8px 8px 20px 0px rgba(32, 3, 3, 0.36);
+  -webkit-box-shadow: 8px 8px 20px 0px rgba(32, 3, 3, 0.36);
+}
+#move-example #ball-cage #ball:hover {
+  box-shadow: 5px 5px 20px 0px rgba(32, 3, 3, 0.36);
+  -webkit-box-shadow: 5px 5px 20px 0px rgba(32, 3, 3, 0.36);
+}
+#move-example .options {
+  width: 40%;
+  float: left;
+}
