@@ -167,7 +167,7 @@ var force = function() {
 
         cssEasing = {
         	swing: function () {
-                // default
+            // default
         		return this.easeOutQuad();
         	},
         	easeInQuad: function () {
@@ -325,7 +325,8 @@ var force = function() {
                     }
                 };
             }
-            else { // executed when its not a jump
+            else {
+                // executed when its not a jump
                 if(isAnimating) {
                     animationCache.push({target: target, options: options, duration: duration, done: done});
                     return;
@@ -341,7 +342,7 @@ var force = function() {
 
             var el = (typeof target === 'string') ? document.querySelector(target) : target;
             var o = {};
-            o.properties = options.properties || options;
+            o.properties = options.properties || options;
             o.duration = duration || options.duration || (options.isJump ? opt.jumpDuration : opt.moveDuration);
             o.done = done || options.done;
             o.easing = options.easing || (options.isJump ? opt.scrollEasing : opt.moveEasing);
@@ -405,9 +406,10 @@ var force = function() {
                 else
                     valueObj = (el[anim.style] + '').match(opt.valueUnitRegEx);
 
-                if(!valueObj) valueObj = ['0', '0', '']; // in case no value is set
+                // in case no value is set
+                if(!valueObj) valueObj = ['0', '0', ''];
 
-                var initValue = isStyle ? (parseInt(valueObj[1]) || 0) : window.scrollY,
+                var initValue = isStyle ? (parseInt(valueObj[1]) || 0) : window.scrollY,
                     change = anim.value - (initValue || 0),
                     currentTime = 0,
                     timeSteps = Math.ceil(anim.duration / opt.frames),
@@ -426,7 +428,8 @@ var force = function() {
                                 el[anim.style] = v + anim.suffix;
                         }
                         else
-                            currentTime = opt.frames; // break loop (nothing to animate)
+                            // break loop (nothing to animate)
+                            currentTime = opt.frames;
                     }
                     else {
                         clearInterval(loopId);
@@ -450,7 +453,7 @@ var force = function() {
               properties: {
                 scrollTop: el.offsetTop + ''
               },
-              duration: o.duration || opt.jumpDuration, //1000,
+              duration: o.duration || opt.jumpDuration,
               easing: o.easing || opt.scrollEasing,
               done: o.setHash ? function() {
                   window.location.hash = el.id;
@@ -458,12 +461,6 @@ var force = function() {
                 } : o.done,
               target: document.body,
               isJump: true
-              /*,
-              // set hash
-              done: function() {
-                location.hash = el.id;
-              }
-              */
           });
         },
 
