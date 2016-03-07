@@ -16,7 +16,13 @@ To use it on your page, just write this line of code in the HTML `HEAD` or on th
 <script src="force.js" type="text/javascript"></script>
 ```
 
-But for those of you who use an module system, it also supports **exports** and **AMD**.
+**Support for AMD and Node Module Pattern (Including browserify)**
+
+## Get it on Bower
+
+```
+bower install force-js
+```
 
 ### jQuery
 
