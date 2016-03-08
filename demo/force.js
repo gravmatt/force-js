@@ -1,7 +1,7 @@
 /*
     The MIT License (MIT)
 
-    Copyright (c) 2015 Rene Tanczos <gravmatt@gmail.com>
+    Copyright (c) 2015-2016 Rene Tanczos <gravmatt@gmail.com>
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@
     SOFTWARE.
 */
 
-/*! Copyright (c) 2015 Rene Tanczos <gravmatt@gmail.com> - The MIT License (MIT) */
+/*! Copyright (c) 2015-2016 Rene Tanczos <gravmatt@gmail.com> - The MIT License (MIT) */
 (function(window, document, undefined) {
 var force = function() {
     'use strict';
@@ -423,7 +423,12 @@ var force = function() {
                             el.style[anim.style] = v + anim.suffix;
                         else if(anim.style in el) {
                             if(o.target)
-                                o.target[anim.style] = v + anim.suffix;
+                                if(anim.style == 'scrollTop') {
+                                  window.scrollTo(0, v)
+                                }
+                                else {
+                                  o.target[anim.style] = v + anim.suffix;
+                                }
                             else
                                 el[anim.style] = v + anim.suffix;
                         }
