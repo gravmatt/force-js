@@ -8,7 +8,7 @@ If the browser doesn't support transitions, force.js fallback to native javascri
 
 Force.js support even older browser version with no transition support.
 
-**See the [Demo](http://gravmatt.com/force-js)!**
+**Go to the [force-js page](http://gravmatt.com/force-js) and try it out!**
 
 To use it on your page, just write this line of code in the HTML `HEAD` or on the bottom of the `BODY` tag.
 
@@ -23,6 +23,16 @@ To use it on your page, just write this line of code in the HTML `HEAD` or on th
 ```
 bower install force-js
 ```
+
+## Get it via cdnjs
+
+Just copy and paste it into your project.
+
+```
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/force-js/0.1.1/force.min.js"></script>
+```
+
+Go to the [force-js page on cdnjs](https://cdnjs.com/libraries/force-js).
 
 ### jQuery
 
