@@ -42,15 +42,15 @@
     }
   };
 
-  function setMenuBar() {
-    banner.style.height = window.innerHeight > 780 ? (window.innerHeight - 180) + 'px' : '600px';
-  }
-
-  setMenuBar();
-
-  window.onresize = function() {
-    setMenuBar();
-  };
+  // function setMenuBar() {
+  //   banner.style.height = window.innerHeight > 780 ? (window.innerHeight - 180) + 'px' : '600px';
+  // }
+  //
+  // setMenuBar();
+  //
+  // window.onresize = function() {
+  //   setMenuBar();
+  // };
 
   // Link Spy Object
     function LinkSpy(options) {
