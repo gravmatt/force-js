@@ -47,25 +47,6 @@ html, body {
       }
     }
   }
-
-  .vader {
-      position: absolute;
-      top: 301px;
-      height: 300px;
-      left: -30px;
-
-      @media (min-width: 768px) {
-          left: 0px;
-      }
-
-      @media (min-width: 992px) {
-          left: 7%;
-      }
-
-      @media (min-width: 1200px) {
-          left: 15%;
-      }
-  }
 }
 
 @panel-background-color: #f7f7f7;
@@ -83,6 +64,26 @@ html, body {
 
 #menu-container {
   height: @menu-default-height;
+
+  .vader {
+      position: absolute;
+      top: 318px;
+      height: 300px;
+      left: -30px;
+      z-index: -1;
+
+      @media (min-width: 768px) {
+          left: 0px;
+      }
+
+      @media (min-width: 992px) {
+          left: 7%;
+      }
+
+      @media (min-width: 1200px) {
+          left: 15%;
+      }
+  }
 }
 
 #menu {

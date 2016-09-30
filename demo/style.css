@@ -32,29 +32,30 @@ body {
 #header #banner .extras .github {
   padding-top: 20px;
 }
-#header .vader {
+#menu-container {
+  height: 90px;
+}
+#menu-container .vader {
   position: absolute;
-  top: 301px;
+  top: 318px;
   height: 300px;
   left: -30px;
+  z-index: -1;
 }
 @media (min-width: 768px) {
-  #header .vader {
+  #menu-container .vader {
     left: 0px;
   }
 }
 @media (min-width: 992px) {
-  #header .vader {
+  #menu-container .vader {
     left: 7%;
   }
 }
 @media (min-width: 1200px) {
-  #header .vader {
+  #menu-container .vader {
     left: 15%;
   }
-}
-#menu-container {
-  height: 90px;
 }
 #menu {
   background-color: #232323;
