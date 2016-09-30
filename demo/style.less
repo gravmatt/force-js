@@ -1,11 +1,13 @@
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
 
+@min-width: 850px;
+
 html, body {
   margin: 0;
   padding: 0;
   font-family: 'Open Sans';
-  min-width: 850px;
+  min-width: @min-width;
 }
 
 .transition-all (@duration) {
@@ -40,12 +42,35 @@ html, body {
       .twitter {
         padding-top: 30px;
       }
+      .github {
+          padding-top: 20px;
+      }
     }
+  }
+
+  .vader {
+      position: absolute;
+      top: 301px;
+      height: 300px;
+      left: -30px;
+
+      @media (min-width: 768px) {
+          left: 0px;
+      }
+
+      @media (min-width: 992px) {
+          left: 7%;
+      }
+
+      @media (min-width: 1200px) {
+          left: 15%;
+      }
   }
 }
 
 @panel-background-color: #f7f7f7;
-@menu-background-color: #00465c;
+@menu-background-color:  darken(#2b2b2b, 3%); //#00465c;
+@menu-background-color-focus:  lighten(@menu-background-color, 4%); //#03546e;
 @ball-background-color: @menu-background-color;
 
 @menu-default-height: 90px;
@@ -89,18 +114,20 @@ html, body {
     list-style-type: none;
     text-align: center;
     font-size: 0;
-    margin: 0;
+    margin: auto;
     padding: 0;
+    width: @min-width;
 
     li {
       .transition-all(@menu-transition-duration);
-      display: inline-block;
+    //   display: inline-block;
+    float: left;
       height: @menu-default-height;
       width: 160px;
       font-size: 18px;
 
       &.active {
-        background-color: #03546e;
+        background-color: @menu-background-color-focus;
       }
 
       &:hover {
@@ -142,6 +169,10 @@ a {
   color: #000;
   font-weight: bold;
   text-decoration: none;
+
+  &:hover {
+      text-decoration: underline;
+  }
 }
 
 .markdown-body {

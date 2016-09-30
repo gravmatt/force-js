@@ -29,19 +29,40 @@ body {
 #header #banner .extras .twitter {
   padding-top: 30px;
 }
+#header #banner .extras .github {
+  padding-top: 20px;
+}
+#header .vader {
+  position: absolute;
+  top: 301px;
+  height: 300px;
+  left: -30px;
+}
+@media (min-width: 768px) {
+  #header .vader {
+    left: 0px;
+  }
+}
+@media (min-width: 992px) {
+  #header .vader {
+    left: 7%;
+  }
+}
+@media (min-width: 1200px) {
+  #header .vader {
+    left: 15%;
+  }
+}
 #menu-container {
   height: 90px;
 }
 #menu {
-  background-color: #00465c;
+  background-color: #232323;
   height: 90px;
   color: #fff;
   width: 100%;
   letter-spacing: 2px;
   z-index: 1001;
-  -webkit-transition: all 300ms ease-in-out;
-  -moz-transition: all 300ms ease-in-out;
-  -o-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
 #menu.fixed {
@@ -61,24 +82,22 @@ body {
   list-style-type: none;
   text-align: center;
   font-size: 0;
-  margin: 0;
+  margin: auto;
   padding: 0;
+  width: 850px;
 }
 #menu ul li {
-  -webkit-transition: all 300ms ease-in-out;
-  -moz-transition: all 300ms ease-in-out;
-  -o-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
-  display: inline-block;
+  float: left;
   height: 90px;
   width: 160px;
   font-size: 18px;
 }
 #menu ul li.active {
-  background-color: #03546e;
+  background-color: #2e2e2e;
 }
 #menu ul li:hover {
-  background-color: #03546e;
+  background-color: #2e2e2e;
   cursor: pointer;
 }
 #menu ul li a {
@@ -114,6 +133,9 @@ a {
   color: #000;
   font-weight: bold;
   text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 .markdown-body {
   width: 790px;
@@ -157,7 +179,7 @@ a {
   border-radius: 100%;
   width: 50px;
   height: 50px;
-  background-color: #00465c;
+  background-color: #232323;
   cursor: pointer;
   box-shadow: 8px 8px 20px 0px rgba(32, 3, 3, 0.36);
   -webkit-box-shadow: 8px 8px 20px 0px rgba(32, 3, 3, 0.36);
