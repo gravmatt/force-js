@@ -476,7 +476,7 @@ var force = function() {
             [].forEach.call(hashLinkElements, function(el) {
         		el.addEventListener('click', function(ev) {
         			if (window.location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && window.location.hostname == this.hostname) {
-        		        var target = document.querySelector(this.hash);
+        		        var target = document.getElementById(this.hash.slice(1));
                     target && jump(target);
                     ev.preventDefault();
         		    }
