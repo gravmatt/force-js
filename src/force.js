@@ -1,7 +1,7 @@
 /*
     Copyright (c) 2015 Rene Tanczos <gravmatt@gmail.com>
 */
-(function(window, document, undefined) {
+;(function(window, document, undefined) {
 var force = function() {
     'use strict';
 
