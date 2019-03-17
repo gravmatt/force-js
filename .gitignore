@@ -1,9 +1,1 @@
-startBrowserSync.sh
 node_modules/
-README.html
-readme.txt
-src/index.html
-src/jquery.js
-src/style.css
-src/style.less
-demo/index2.html
