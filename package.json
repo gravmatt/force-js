@@ -1,0 +1,31 @@
+{
+  "name": "force-js",
+  "version": "1.0.0",
+  "description": "Easy to use page animation lib with no dependecies",
+  "main": "force.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gravmatt/force-js.git"
+  },
+  "keywords": [
+    "forcejs",
+    "animation",
+    "js"
+  ],
+  "author": "Rene Tanczos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gravmatt/force-js/issues"
+  },
+  "homepage": "https://github.com/gravmatt/force-js#readme",
+  "dependencies": {
+    "gulp": "^4.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "uglify-save-license": "^0.4.1"
+  }
+}
